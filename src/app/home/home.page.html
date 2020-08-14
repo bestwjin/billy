@@ -1,20 +1,67 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <div><ion-title class="main">billy</ion-title></div>
+  <div>
+    <span>고덕동</span> 에서 
+    <span>카메라</span> 빌려요
+  </div>      
+  <div>
+    <i class="fas fa-search search-btn"></i>     
+  </div>   
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content fullscreen scrollY="true">
+  <!-- 지역, 카테고리 대표상품(나중에 광고 책정 가능) -->
+  <div class="main-top-bg-item" 
+    style="background-image:url('https://www.sambamall.com/cdn/product/20190325/FD20190325113245027_org.jpg');">
+    <div class="spec-div">
+      <span class="spec-item-title">
+        2020 자전거 렌탈 모음전
+      </span>
+      <div class="spec-price-info-div">
+        <span>고덕동</span>
+        <span>월 24,000/24</span>
+      </div>          
+    </div>
   </div>
+
+  <!-- 상품리스트 -->
+  <ion-list class="main-prod-list-all" lines="none">
+    <div *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+      <ion-item no-padding class="mp-item" (click)="goTo('details', '')">
+        <img src="https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2019%2F10%2Fbest-cameras-under-600-usd-beginners-dslr-4k-body-2019-1-1.jpg?quality=95&w=1170&cbr=1&q=90&fit=max"/>
+        <div class="main-prod-list-specdiv">
+          <div class="mpl-title">Nikon 카메라 특가렌탈</div>
+          <div style=" font-size:0.8em;">
+            <span style="color:#497720;">고덕동</span> ★4.5 jjinytm 
+          </div>
+          <div>월 24,000 / 24M</div>
+        </div>
+      </ion-item>
+      <ion-item no-padding class="mp-item" (click)="goTo('details', '')">
+        <img src="https://image.canon-ci.co.kr/pds/editor/notice/2013/0425/report_img0101.jpg" />
+        <div class="main-prod-list-specdiv">
+          <div class="mpl-title">캐논 3달 썼는데, 당분간 안써서 렌탈해요...</div>
+          <div style=" font-size:0.8em;">
+            <span style="color:#497720;">고덕동</span> jjinytm ★4.5
+          </div>
+          <div>월 24,000 / 24M</div>
+        </div>
+      </ion-item>    
+    </div>
+  </ion-list> 
 </ion-content>
+
+<ion-toolbar>
+  <ion-tabs id="btm-tabs">
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home"><i class="fa fa-home"></i></ion-tab-button>
+        <ion-tab-button tab="chat"><i class="far fa-comment-dots"></i></ion-tab-button>
+        <ion-tab-button tab="add-item" class="add-btn"
+          (click)="goTo('add-item','')">
+          <i class="fas fa-plus"></i>
+        </ion-tab-button>
+        <ion-tab-button tab="noti"><i class="far fa-bell"></i></ion-tab-button>
+        <ion-tab-button tab="mybilly"><i class="far fa-user"></i></ion-tab-button>    
+    </ion-tab-bar>  
+</ion-tabs> 
+</ion-toolbar>
