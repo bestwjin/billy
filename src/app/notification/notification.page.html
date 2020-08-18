@@ -1,0 +1,24 @@
+<ion-header>
+  <div class="header-left-btn">
+    
+  </div>
+  <ion-title class="align-center">알림</ion-title>  
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+
+<!-- ion-tab-button에 tab속성에 파일명을 기입하면 route로 자동 작용한다. 그런데, 자꾸 /home/이 경로에 붙어서 에러가남.
+  일단은 나중에 tab을 따로 모듈로 빼기로 하고 우선 goTo()로 route를 지정하자.
+-->
+<ion-toolbar>
+  <ion-tabs id="btm-tabs">
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home"><i class="fa fa-home"></i></ion-tab-button>
+        <ion-tab-button tab="chat"><i class="far fa-comment-dots"></i></ion-tab-button>
+        <ion-tab-button tab="add-item" class="add-btn" (click)="goTo('add-item','')"><i class="fas fa-plus"></i></ion-tab-button>
+        <ion-tab-button tab="notification" (click)="goTo('notification','')"><i class="far fa-bell"></i></ion-tab-button>
+        <ion-tab-button tab="mybilly"><i class="far fa-user"></i></ion-tab-button>    
+    </ion-tab-bar>  
+</ion-tabs> 
